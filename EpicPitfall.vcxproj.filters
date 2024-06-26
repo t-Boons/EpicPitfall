@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\Core\Containers\CustomString.cpp">
+      <Filter>Core\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\UI\BackToMenuButton.cpp">
+      <Filter>Gameplay\GameObject\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\UI\Button.cpp">
+      <Filter>Gameplay\GameObject\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Utils\Animator.cpp">
+      <Filter>Gameplay\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Utils\AudioAnimator.cpp">
+      <Filter>Gameplay\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\Utils\AudioPlayer.cpp">
+      <Filter>Gameplay\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Camera.cpp">
+      <Filter>Gameplay\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\Checkpoint.cpp">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\ClimbRope.cpp">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\Coin.cpp">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Core.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\DataSerializer.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\Enviroment.cpp">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\EnviromentCollision.cpp">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\File.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\Finish.cpp">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\GameObject.cpp">
+      <Filter>Gameplay\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Game.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\UI\Image.cpp">
+      <Filter>Gameplay\GameObject\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\World\Level01.cpp">
+      <Filter>Gameplay\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\World\EndScreen.cpp">
+      <Filter>Gameplay\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\World\TitleScreen.cpp">
+      <Filter>Gameplay\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Enemies\Monkey.cpp">
+      <Filter>Gameplay\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Enemies\RollingPig.cpp">
+      <Filter>Gameplay\GameObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Rendering\NumberRenderer.cpp">
+      <Filter>Core\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Rect.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\UI\ParralaxBackground.cpp">
+      <Filter>Gameplay\GameObject\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Player.cpp">
+      <Filter>Gameplay\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Physics\Collision\AABB.cpp">
+      <Filter>Core\Physics\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Physics\Collision\AABBCollider.cpp">
+      <Filter>Core\Physics\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Physics\Collision\TilemapCollider.cpp">
+      <Filter>Core\Physics\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Physics\Collision\PixelCollider.cpp">
+      <Filter>Core\Physics\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Physics\PhysicsManager.cpp">
+      <Filter>Core\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Physics\RigidBody.cpp">
+      <Filter>Core\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Rendering\Renderable.cpp">
+      <Filter>Core\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Rendering\Renderer.cpp">
+      <Filter>Core\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\SpriteLibrary.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\Spiderweb.cpp">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\SwingingRope.cpp">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Projectiles\Stick.cpp">
+      <Filter>Gameplay\GameObject\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Projectiles\Rock.cpp">
+      <Filter>Gameplay\GameObject\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\UI\StartButton.cpp">
+      <Filter>Gameplay\GameObject\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\UI\NumberDisplay.cpp">
+      <Filter>Gameplay\GameObject\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Containers\StaticList.cpp">
+      <Filter>Core\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\Zipline.cpp">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\World\World.cpp">
+      <Filter>Gameplay\World</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\template\opengl.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\template\sprite.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\template\surface.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\template\template.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\template\tmpl8math.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\BoxCollider.cpp">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pfpch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Core\Containers\CustomString.h">
+      <Filter>Core\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Containers\DynamicList.h">
+      <Filter>Core\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Containers\StaticList.h">
+      <Filter>Core\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\UI\BackToMenuButton.h">
+      <Filter>Gameplay\GameObject\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\UI\Button.h">
+      <Filter>Gameplay\GameObject\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Utils\Animator.h">
+      <Filter>Gameplay\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Utils\AudioAnimator.h">
+      <Filter>Gameplay\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Utils\AudioPlayer.h">
+      <Filter>Gameplay\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Camera.h">
+      <Filter>Gameplay\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\Checkpoint.h">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\ClimbRope.h">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\Coin.h">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Physics\Collision\CollisionResult.h">
+      <Filter>Core\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\Constants.h">
+      <Filter>Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Core.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\CustomMath.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\DataSerializer.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Enemies\Enemy.h">
+      <Filter>Gameplay\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\Enviroment.h">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\EnviromentCollision.h">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\File.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\Finish.h">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\GameObject.h">
+      <Filter>Gameplay\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Game.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\UI\Image.h">
+      <Filter>Gameplay\GameObject\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\World\Level01.h">
+      <Filter>Gameplay\World</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\World\EndScreen.h">
+      <Filter>Gameplay\World</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\World\TitleScreen.h">
+      <Filter>Gameplay\World</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Enemies\Monkey.h">
+      <Filter>Gameplay\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Enemies\RollingPig.h">
+      <Filter>Gameplay\GameObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Rendering\NumberRenderer.h">
+      <Filter>Core\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Rect.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\UI\ParralaxBackground.h">
+      <Filter>Gameplay\GameObject\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Player.h">
+      <Filter>Gameplay\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Physics\Collision\AABB.h">
+      <Filter>Core\Physics\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Physics\Collision\AABBCollider.h">
+      <Filter>Core\Physics\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Physics\Collision\TilemapCollider.h">
+      <Filter>Core\Physics\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Physics\Collision\PixelCollider.h">
+      <Filter>Core\Physics\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Physics\PhysicsManager.h">
+      <Filter>Core\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Physics\RigidBody.h">
+      <Filter>Core\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Rendering\Renderable.h">
+      <Filter>Core\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Rendering\Renderer.h">
+      <Filter>Core\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\SpriteLibrary.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\Spiderweb.h">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\SwingingRope.h">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Projectiles\Stick.h">
+      <Filter>Gameplay\GameObject\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Projectiles\Rock.h">
+      <Filter>Gameplay\GameObject\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\UI\StartButton.h">
+      <Filter>Gameplay\GameObject\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\UI\NumberDisplay.h">
+      <Filter>Gameplay\GameObject\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\Zipline.h">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\World\World.h">
+      <Filter>Gameplay\World</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\template\common.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\template\opengl.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\template\precomp.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\template\sprite.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\template\surface.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\template\tmpl8math.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="cl\tools.cl">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\BoxCollider.h">
+      <Filter>Gameplay\GameObject\Enviroment</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pfpch.h" />
+    <ClInclude Include="src\Gameplay\Utils\Health.h">
+      <Filter>Gameplay\Utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+    <None Include="lib\template\LICENSE" />
+    <None Include="cl\kernels.cl">
+      <Filter>lib</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{87938c92-7852-416c-81e0-89eebcc14d55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Containers">
+      <UniqueIdentifier>{585f8373-f2c8-473c-bac2-e77551b207ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Physics">
+      <UniqueIdentifier>{d2843e6b-a2a9-4056-8c28-341d58e0b026}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Rendering">
+      <UniqueIdentifier>{ce2bd4f2-f9aa-41a1-a829-92564c2a5e11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay">
+      <UniqueIdentifier>{543900d4-2762-4f6b-bec2-9e7bf9095bcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\GameObject">
+      <UniqueIdentifier>{44700c5e-c296-4b0f-a121-3d1e00c070a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\Utils">
+      <UniqueIdentifier>{8ebfdb99-2606-4973-9413-c589e947dcf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\World">
+      <UniqueIdentifier>{110c153b-3601-4e16-81c8-f54958a9b75c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\GameObject\Enemies">
+      <UniqueIdentifier>{9207f393-5ffe-437c-96c7-fdfcb85dcb32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\GameObject\Projectiles">
+      <UniqueIdentifier>{945bccfc-b4d5-4502-9823-c51d4d07eef4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\GameObject\UI">
+      <UniqueIdentifier>{349fb864-ce29-46a1-8045-e218b6213433}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gameplay\GameObject\Enviroment">
+      <UniqueIdentifier>{6d783ed3-4e9d-497a-a0f8-ae35df4392cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Physics\Collision">
+      <UniqueIdentifier>{140dd012-404c-41e6-9bda-109494d01739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{7b7410d0-66b9-4ab4-9f83-eb251387e2cb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,47 @@
+Visuals:
+
+Tileset by Cainos on Itch.io
+https://cainos.itch.io/pixel-art-platformer-village-props
+
+CraftPix.net player sprite sheets.
+https://craftpix.net/freebies/free-3-character-sprite-sheets-pixel-art/
+https://craftpix.net/file-licenses/
+
+Sunnyland forest of illusion by Ansimuz on itch.io.
+https://ansimuz.itch.io/sunnyland-forest-of-illusion
+
+Free Street Animal Pixel Art
+https://free-game-assets.itch.io/free-street-animal-pixel-art-asset-pack
+
+
+Libraries:
+
+Json parsing library:
+https://github.com/nlohmann/json
+
+
+Audio library:
+https://github.com/jpvanoosten/Audio	
+
+Audio:
+
+Level01 music:
+https://www.fesliyanstudios.com/royalty-free-music/download/8-bit-adventure/2282
+
+Menu music:
+https://www.fesliyanstudios.com/royalty-free-music/download/retro-forest/451
+
+Coin pickup
+https://www.fesliyanstudios.com/royalty-free-sound-effects-download/coin-272
+
+Grass walking
+https://www.fesliyanstudios.com/royalty-free-sound-effects-download/footsteps-on-grass-284
+
+Concrete walking
+https://www.fesliyanstudios.com/sound-effects-search.php?q=concrete
+
+Boing sound effect
+https://pixabay.com/sound-effects/search/boing/
+
+Checkpoint sound effect:
+https://www.fesliyanstudios.com/royalty-free-sound-effects-download/spells-and-power-ups-217

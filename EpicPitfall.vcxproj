@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribute|Win32">
+      <Configuration>Distribute</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribute|x64">
+      <Configuration>Distribute</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="VisDebug|Win32">
+      <Configuration>VisDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="VisDebug|x64">
+      <Configuration>VisDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>EpicPitfall</ProjectName>
+    <ProjectGuid>{8300D8A1-7E3E-4643-95B2-EAD48946C38B}</ProjectGuid>
+    <RootNamespace>Tmpl8</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <!-- Custom section, because microsoft can't keep this organised -->
+  <PropertyGroup>
+    <!-- Note that Platform and Configuration have been flipped around (when compared to the default).
+         This allows precompiled binaries for the choosen $(Platform) to be placed in that directory once,
+         without duplication for Debug/Release. Intermediate files are still placed in the appropriate
+         subdirectory.
+         The debug binary is postfixed with _debug to prevent clashes with it's Release counterpart
+         for the same Platform. -->
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\bin-int\$(Platform)\$(Configuration)\</IntDir>
+    <MultiProcessorCompilation>true</MultiProcessorCompilation>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <TargetName>$(ProjectName)_debug</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='VisDebug'">
+    <TargetName>$(ProjectName)_debug</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>lib\template;.;lib\glad;lib\glfw-WIN64\include;lib\OpenCL\inc;lib\zlib;src;lib/audio/inc</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pfpch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level4</WarningLevel>
+      <ExceptionHandling>Sync</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <OutputFile>$(TargetPath)</OutputFile>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='x64'">
+    <Link>
+      <AdditionalLibraryDirectories>lib/glfw-WIN64/lib-vc2022;lib/zlib;lib/OpenCL/lib;lib/audio/lib/x64</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='Win32'">
+    <Link>
+      <AdditionalLibraryDirectories>lib/glfw-WIN32/lib-vc2022;lib/zlib;lib/OpenCL/lib;lib/audio/lib/Win32</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile>
+      <!-- NOTE: Only Release-x64 has WIN64 defined... -->
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">stdcpp17</LanguageStandard>
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdcpp17</LanguageStandard>
+      <OpenMPSupport Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</OpenMPSupport>
+      <OpenMPSupport Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</OpenMPSupport>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</TreatWarningAsError>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Audio_d.lib;winmm.lib;advapi32.lib;user32.lib;glfw3.lib;gdi32.lib;shell32.lib;OpenGL32.lib;libz-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Audio_d.lib;winmm.lib;advapi32.lib;user32.lib;glfw3.lib;gdi32.lib;shell32.lib;OpenGL32.lib;libz-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </LinkTimeCodeGeneration>
+    </Link>
+    <PostBuildEvent>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='VisDebug'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;VISDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='VisDebug|x64'">stdcpp17</LanguageStandard>
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='VisDebug|Win32'">stdcpp17</LanguageStandard>
+      <OpenMPSupport Condition="'$(Configuration)|$(Platform)'=='VisDebug|x64'">true</OpenMPSupport>
+      <OpenMPSupport Condition="'$(Configuration)|$(Platform)'=='VisDebug|Win32'">true</OpenMPSupport>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='VisDebug|Win32'">true</TreatWarningAsError>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='VisDebug|x64'">true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='VisDebug|Win32'">Audio_d.lib;winmm.lib;advapi32.lib;user32.lib;glfw3.lib;gdi32.lib;shell32.lib;OpenGL32.lib;libz-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='VisDebug|x64'">Audio_d.lib;winmm.lib;advapi32.lib;user32.lib;glfw3.lib;gdi32.lib;shell32.lib;OpenGL32.lib;libz-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration Condition="'$(Configuration)|$(Platform)'=='VisDebug|Win32'">
+      </LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration Condition="'$(Configuration)|$(Platform)'=='VisDebug|x64'">
+      </LinkTimeCodeGeneration>
+    </Link>
+    <PostBuildEvent>
+      <Command Condition="'$(Configuration)|$(Platform)'=='VisDebug|Win32'">
+      </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Command Condition="'$(Configuration)|$(Platform)'=='VisDebug|x64'">
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Distribute'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <BrowseInformation>
+      </BrowseInformation>
+    </ClCompile>
+    <Link>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN64;NDEBUG;RELEASE;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Audio.lib;winmm.lib;advapi32.lib;user32.lib;glfw3.lib;gdi32.lib;shell32.lib;OpenGL32.lib;libz-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN64;NDEBUG;RELEASE;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Audio.lib;winmm.lib;advapi32.lib;user32.lib;glfw3.lib;gdi32.lib;shell32.lib;OpenGL32.lib;libz-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribute|x64'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+      <PreprocessorDefinitions>WIN64;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Audio.lib;winmm.lib;advapi32.lib;user32.lib;glfw3.lib;gdi32.lib;shell32.lib;OpenGL32.lib;libz-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribute|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+      <PreprocessorDefinitions>WIN64;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Audio.lib;winmm.lib;advapi32.lib;user32.lib;glfw3.lib;gdi32.lib;shell32.lib;OpenGL32.lib;libz-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <!-- END Custom section -->
+  <ItemGroup>
+    <ClCompile Include="src\Core\Containers\StaticList.cpp" />
+    <ClCompile Include="src\Core\Core.cpp" />
+    <ClCompile Include="src\Core\DataSerializer.cpp" />
+    <ClCompile Include="src\Core\File.cpp" />
+    <ClCompile Include="src\Core\Game.cpp" />
+    <ClCompile Include="src\Core\Physics\Collision\AABB.cpp" />
+    <ClCompile Include="src\Core\Physics\Collision\AABBCollider.cpp" />
+    <ClCompile Include="src\Core\Physics\Collision\PixelCollider.cpp" />
+    <ClInclude Include="src\Core\Physics\Collision\AABB.h" />
+    <ClInclude Include="src\Core\Physics\Collision\PixelCollider.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClCompile Include="src\Core\Physics\Collision\TilemapCollider.cpp" />
+    <ClCompile Include="src\Core\Physics\PhysicsManager.cpp" />
+    <ClCompile Include="src\Core\Physics\RigidBody.cpp" />
+    <ClCompile Include="src\Core\Rect.cpp" />
+    <ClCompile Include="src\Core\Rendering\NumberRenderer.cpp" />
+    <ClCompile Include="src\Core\Rendering\Renderable.cpp" />
+    <ClCompile Include="src\Core\Rendering\Renderer.cpp" />
+    <ClCompile Include="src\Core\Containers\CustomString.cpp" />
+    <ClCompile Include="lib\template\opengl.cpp" />
+    <ClCompile Include="lib\template\sprite.cpp" />
+    <ClCompile Include="lib\template\surface.cpp" />
+    <ClCompile Include="lib\template\template.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='VisDebug|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='VisDebug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pfpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">pfpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='VisDebug|x64'">pfpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='VisDebug|Win32'">pfpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Distribute|x64'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Distribute|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">pfpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">pfpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Distribute|x64'">pfpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Distribute|Win32'">pfpch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="lib\template\tmpl8math.cpp" />
+    <ClCompile Include="src\Core\SpriteLibrary.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\BoxCollider.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\Checkpoint.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Camera.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\ClimbRope.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\Coin.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Enemies\Monkey.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Enemies\RollingPig.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Projectiles\Stick.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\Enviroment.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\EnviromentCollision.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\Finish.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\GameObject.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\Spiderweb.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\UI\BackToMenuButton.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\UI\Image.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\UI\ParralaxBackground.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Player.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Projectiles\Rock.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\UI\NumberDisplay.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\UI\Button.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\UI\StartButton.cpp" />
+    <ClCompile Include="src\Gameplay\Utils\Animator.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\SwingingRope.cpp" />
+    <ClCompile Include="src\Gameplay\GameObject\Enviroment\Zipline.cpp" />
+    <ClCompile Include="src\Gameplay\Utils\AudioAnimator.cpp" />
+    <ClCompile Include="src\Gameplay\Utils\AudioPlayer.cpp" />
+    <ClCompile Include="src\Gameplay\World\EndScreen.cpp" />
+    <ClCompile Include="src\Gameplay\World\Level01.cpp" />
+    <ClCompile Include="src\Gameplay\World\TitleScreen.cpp" />
+    <ClCompile Include="src\Gameplay\World\World.cpp" />
+    <ClCompile Include="src\pfpch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Distribute|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Distribute|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='VisDebug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='VisDebug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Core\DataSerializer.h" />
+    <ClInclude Include="src\Core\File.h" />
+    <ClInclude Include="src\Core\CustomMath.h" />
+    <ClInclude Include="src\Core\Containers\StaticList.h" />
+    <ClInclude Include="cl\tools.cl" />
+    <ClInclude Include="src\Core\Containers\DynamicList.h" />
+    <ClInclude Include="src\Core\Containers\CustomString.h" />
+    <ClInclude Include="src\Core\Game.h" />
+    <ClInclude Include="src\Core\Physics\Collision\AABBCollider.h" />
+    <ClInclude Include="src\Core\Physics\Collision\CollisionResult.h" />
+    <ClInclude Include="src\Core\Physics\Collision\TilemapCollider.h" />
+    <ClInclude Include="src\Core\Physics\PhysicsManager.h" />
+    <ClInclude Include="src\Core\Physics\RigidBody.h" />
+    <ClInclude Include="src\Core\Rect.h" />
+    <ClInclude Include="src\Core\Rendering\NumberRenderer.h" />
+    <ClInclude Include="src\Core\Rendering\Renderer.h" />
+    <ClInclude Include="src\Core\Core.h" />
+    <ClInclude Include="lib\template\common.h" />
+    <ClInclude Include="lib\template\opengl.h" />
+    <ClInclude Include="lib\template\precomp.h" />
+    <ClInclude Include="lib\template\sprite.h" />
+    <ClInclude Include="lib\template\surface.h" />
+    <ClInclude Include="lib\template\tmpl8math.h" />
+    <ClInclude Include="src\Core\SpriteLibrary.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\BoxCollider.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\Checkpoint.h" />
+    <ClInclude Include="src\Gameplay\Constants.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Camera.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\ClimbRope.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\Coin.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Enemies\Enemy.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Enemies\Monkey.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Enemies\RollingPig.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Projectiles\Stick.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\Enviroment.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\EnviromentCollision.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\Finish.h" />
+    <ClInclude Include="src\Gameplay\GameObject\GameObject.h" />
+    <ClInclude Include="src\Core\Rendering\Renderable.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\Spiderweb.h" />
+    <ClInclude Include="src\Gameplay\GameObject\UI\BackToMenuButton.h" />
+    <ClInclude Include="src\Gameplay\GameObject\UI\Image.h" />
+    <ClInclude Include="src\Gameplay\GameObject\UI\ParralaxBackground.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Player.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Projectiles\Rock.h" />
+    <ClInclude Include="src\Gameplay\GameObject\UI\NumberDisplay.h" />
+    <ClInclude Include="src\Gameplay\GameObject\UI\Button.h" />
+    <ClInclude Include="src\Gameplay\GameObject\UI\StartButton.h" />
+    <ClInclude Include="src\Gameplay\Utils\Animator.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\SwingingRope.h" />
+    <ClInclude Include="src\Gameplay\GameObject\Enviroment\Zipline.h" />
+    <ClInclude Include="src\Gameplay\Utils\AudioAnimator.h" />
+    <ClInclude Include="src\Gameplay\Utils\AudioPlayer.h" />
+    <ClInclude Include="src\Gameplay\Utils\Health.h" />
+    <ClInclude Include="src\Gameplay\World\EndScreen.h" />
+    <ClInclude Include="src\Gameplay\World\Level01.h" />
+    <ClInclude Include="src\Gameplay\World\TitleScreen.h" />
+    <ClInclude Include="src\Gameplay\World\World.h" />
+    <ClInclude Include="src\pfpch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cl\kernels.cl" />
+    <None Include="README.md" />
+    <None Include="lib\template\LICENSE" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
